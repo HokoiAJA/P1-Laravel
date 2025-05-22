@@ -1,12 +1,11 @@
 <x-app title="Articles">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <h2>{{ $article->title }}</h2>
-                <div class="text-muted"> {{ \Carbon\Carbon::parse($article->created_at)->format('d F, Y') }}
-                </div>
-                <hr>
-                {{ $article->body }}
+            <div class="mt-4">
+                <x-card title="{{ $article->title }}"
+                    subtitle="{{ \Carbon\Carbon::parse($article->created_at)->format('d F, Y') }}">
+                    {{ $article->body }}
+                </x-card>
             </div>
         </div>
     </div>
